@@ -1,0 +1,490 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* header */
+
+header {
+    height: 13vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #fff;
+    position: sticky;
+    top: 0px;
+    z-index: 99999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+header:hover {
+    background-color: #f9f9f9;
+    transform: translateY(-5px);
+}
+
+.div1 {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    column-gap: 5%;
+    width: 80%;
+}
+
+.div2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.4%;
+}
+
+.div3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.4%;
+    gap: 1%;
+}
+
+button {
+    width: fit-content;
+    border: none;
+    padding: 10px 20px;
+    background-color: #21477F;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #1a3561;
+    transform: scale(1.05);
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #21477F;
+}
+
+.items {
+    margin: 0% 1%;
+    font-size: 75%;
+}
+
+#date, #time {
+    font-weight: bolder;
+    font-size: 80%;
+}
+
+.list1 {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: fit-content;
+    padding-right: 2%;
+}
+
+li {
+    list-style: none;
+}
+
+.list-element {
+    font-size: 75%;
+    font-weight: 900;
+}
+
+/* main section */
+
+.main-section {
+    background-image: url('https://www.irctc.co.in/nget/home_page_banner1.b233d37e7fc8266ecd46.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.tdetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.head-tdetails {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.login, .charts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(33, 61, 119);
+    color: #fff;
+    height: 50px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.login:hover, .charts:hover {
+    background-color: rgb(25, 50, 95);
+    transform: scale(1.05);
+}
+
+.charts > img, .pnr > img {
+    margin-bottom: 5px;
+}
+
+.charts > div, .pnr > div {
+    font-size: 85%;
+    font-weight: bolder;
+    justify-self: flex-start;
+    padding: 0 15px;
+}
+
+.ir-title {
+    color: #fff;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2%;
+    animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.title {
+    font-size: 300%;
+}
+
+.subtitle {
+    font-size: 150%;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .div1 {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .main-section {
+        padding: 10px;
+    }
+
+    .tdetails {
+        width: 100%;
+    }
+
+    .login, .charts {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 200%;
+    }
+
+    .subtitle {
+        font-size: 120%;
+    }
+}
+
+@media (max-width: 480px) {
+    .list1 {
+        flex-direction: column;
+    }
+
+    .items {
+        font-size: 65%;
+    }
+
+    .title {
+        font-size: 150%;
+    }
+
+    .subtitle {
+        font-size: 100%;
+    }
+}
+
+
+/* Login Container */
+.login-container {
+    max-width: 800px;
+    width: 750px;
+    margin: auto;
+    padding: 50px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out; /* Animation for fade-in effect */
+}
+
+/* Login Header */
+.login-header {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #21477F;
+    font-weight: bold;
+}
+
+/* Login Form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    background: #fff;
+    transition: box-shadow 0.3s ease; /* Animation for hover effect */
+}
+
+.input-group:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 1em;
+}
+
+/* Login Button */
+.login-btn {
+    background: #21477F;
+    color: white;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s; /* Button hover and click animations */
+}
+
+.login-btn:hover {
+    background: #1a3561;
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.login-btn:active {
+    transform: scale(1); /* Reset zoom when clicked */
+}
+
+/* Login Links */
+.login-links {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.login-links a {
+    color: #21477F;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin: 0 10px;
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.login-links a:hover {
+    color: #1a3561;
+}
+
+/* Captcha Section */
+.captcha-group {
+    flex-direction: column;
+}
+
+.captcha-image {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.captcha-image img {
+    max-height: 40px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: transform 0.3s ease; /* Hover animation for captcha image */
+}
+
+.captcha-image img:hover {
+    transform: rotate(5deg) scale(1.1); /* Rotate and zoom effect */
+}
+
+.refresh-captcha {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #21477f00;
+    transition: transform 0.3s ease, color 0.3s; /* Animation for hover */
+}
+
+
+
+.refresh-captcha {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.refresh-captcha:hover {
+    animation: continuous-rotation 1s linear; /* Continuous rotation */
+    background-color: rgba(255, 255, 255, 0);
+    color: #1a3561;
+}
+
+@keyframes continuous-rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 15px;
+        margin: 20px;
+    }
+
+    .login-header {
+        font-size: 1.3em;
+    }
+
+    .login-btn {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .captcha-image img {
+        max-height: 30px;
+    }
+
+    .refresh-captcha {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 10px;
+    }
+
+    .login-header {
+        font-size: 1.2em;
+    }
+
+    .login-btn {
+        font-size: 0.8em;
+        padding: 6px;
+    }
+
+    .captcha-image img {
+        max-height: 25px;
+    }
+}
+
+/* Additional Section (c-services) */
+.c-services {
+    background-color: #fff;
+    margin-top: 2%;
+    padding: 1% 3% 1% 1%;
+    font-size: 88%;
+    font-weight: bolder;
+    color: blue;
+    line-height: 1.5;
+    animation: slideIn 1s ease-in-out; /* Slide-in animation */
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design for c-services */
+@media (max-width: 768px) {
+    .c-services {
+        font-size: 80%;
+        padding: 2% 4%;
+    }
+}
+
+@media (max-width: 480px) {
+    .c-services {
+        font-size: 70%;
+        padding: 3% 5%;
+    }
+}

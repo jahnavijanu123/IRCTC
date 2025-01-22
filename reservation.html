@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    <style>
+        body {
+            background-image: url("https://okcredit-blog-images-prod.storage.googleapis.com/2020/12/indianrailway1.jpg");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            line-height: 1.5;
+            min-height: 100vh;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .main {
+            background-color: transparent;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 10px 20px;
+            transition: transform 0.2s;
+            width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        label {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            text-align: left;
+            color: #555;
+            font-weight: bold;
+        }
+
+
+        input {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            background-color: #4CAF50;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Reservation Form</h1>
+        <h3>Enter your details</h3>
+        <form action="">
+            <label for="first">
+                From
+            </label>
+            <input type="text" id="first" name="first" placeholder="source" required>
+
+            <label for="To">
+                To
+            </label>
+            <input type="text" id="to" name="To" placeholder="To" required>
+
+            <label for="Train Name/Train Number">
+                Train Name/Train Number
+            </label>
+            <input type="text" id="Train" name="Train" placeholder="Train Name/Train Number " required>
+
+            <label for="Date of journey">
+                Date of journey
+            </label>
+            <input type="text" id="Date" name="Date" placeholder="Date of Journey" required>
+            <table>
+                <tr>
+                    <td>Class</td>
+                    <td><Select Name="class">
+                            <option value="None">None</option>
+                            <option value="General">General</option>
+                            <option value="2S">2S</option>
+                            <option value="SL">Sleeper</option>
+                            <option value="3rd Ac Economy">3E</option>
+                            <option value="3rd AC">3rd AC</option>
+                            <option value="2nd AC">2nd AC</option>
+                            <option value="1st AC">1st AC</option>
+
+                        </Select></td>
+                </tr>
+            </table>
+            <label for="first">
+                Enter Name
+            </label>
+            <input type="text" id="first" name="first" placeholder="Enter Full Name" required>
+
+            <label for="first">
+                Age
+            </label>
+            <input type="text" id="first" name="first" placeholder="Age" required>
+            <table>
+
+
+
+                <tr>
+                    <td>Gender</td>
+                    <td><Select Name="Gender">
+                            <option value="None">None</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+            </table>
+            <table>
+                <tr>
+                    <td> Mobile No.</td>
+                    <td><input type="text" name="Mobile No." id="Mobile No." size="30"></td>
+                </tr>
+            </table>
+            <label for="first">
+                E-mail
+            </label>
+            <input type="text" id="first" name="first" placeholder="Enter your Email" required>
+            <label for="first">
+                Address
+            </label>
+            <input type="text" id="first" name="first" placeholder="Enter your full address" required>
+            <table>
+                <tr>
+
+                    <td>Payment Mode</td>
+
+                    <td><Select Name="Payment Mode">
+                            <option value="None">None</option>
+                            <option value="Credit/Debit card">Credit/Debit card</option>
+                            <option value="Wallet/UPI">Wallet/UPI</option>
+                            <option value="Net Banking">Net Banking</option>
+                            <option value="QR code">QR Code</option>
+                        </Select></td>
+            </table>
+
+            <div class="wrap">
+                <button type="submit" onclick="location.href='Payment.html'">
+                    Submit
+                </button>
+            </div>
+        </form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC Buses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md sticky top-0 z-50 flex flex-wrap justify-between items-center p-4">
+        <img src="https://aniportalimages.s3.amazonaws.com/media/details/Railway_july31.jpg" alt="IRCTC logo with a train and Indian Railways text" class="w-16 h-16">
+        <div class="flex flex-col items-center space-y-2 md:flex-row md:space-y-0 md:space-x-4">
+            <div class="flex items-center space-x-4">
+                <button class="bg-blue-800 text-white font-bold py-2 px-4 rounded">
+                    <a href="login.html">LOGIN</a>
+                </button>
+                <a class="text-sm" href="#">REGISTER</a>
+                <a class="text-sm" href="#">CONTACT US</a>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-home text-gray-500"></i>
+                <a class="text-sm font-bold" href="index.html">TRAINS</a>
+                <a class="text-sm font-bold" href="buses.html">BUSES</a>
+                <a class="text-sm font-bold" href="flights.html">FLIGHTS</a>
+                <a class="text-sm font-bold" href="hotels.html">HOTELS</a>
+                <a class="text-sm font-bold" href="#">HOLIDAYS</a>
+                <a class="text-sm font-bold" href="#">LOYALTY</a>
+                <a class="text-sm font-bold" href="#">MEALS</a>
+            </div>
+        </div>
+        <img src="https://www.irctc.co.in/nget/assets/images/logo.png" alt="IRCTC logo with a train and Indian Railways text" class="w-12 h-12">
+    </header>
+    <section class="main-section bg-cover bg-center bg-fixed flex flex-col md:flex-row justify-evenly p-4" style="background-image: url('https://placehold.co/1920x1080');">
+        <div class="tdetails w-full md:w-1/2 flex flex-col space-y-4">
+            <div class="travel-details bg-white p-4 rounded shadow-md">
+                <div class="tdetail-head text-blue-800 font-bold text-2xl mb-4">BOOK BUS TICKET</div>
+                <form class="forms flex flex-col space-y-4">
+                    <div class="src-dest flex flex-col space-y-4">
+                        <div class="src flex items-center border border-gray-300 rounded p-2">
+                            <i class="fa fa-location-arrow text-blue-800 mr-2"></i>
+                            <input type="text" class="srctext w-full outline-none" placeholder="From">
+                        </div>
+                        <i class="fa fa-exchange rotate-90 self-center text-blue-800"></i>
+                        <div class="dest flex items-center border border-gray-300 rounded p-2">
+                            <i class="fa fa-map-marker text-blue-800 mr-2"></i>
+                            <input type="text" class="desttext w-full outline-none" placeholder="To">
+                        </div>
+                        <div class="tdate flex items-center border border-gray-300 rounded p-2">
+                            <i class="fa fa-calendar text-blue-800 mr-2"></i>
+                            <input type="date" class="datatxt w-full outline-none">
+                        </div>
+                    </div>
+                </form>
+                <button class="search bg-orange-600 text-white font-bold py-2 px-6 rounded mt-4">Search</button>
+            </div>
+        </div>
+        <div class="ir-title text-white text-center mt-4 md:mt-0">
+            <div class="title text-4xl font-bold">IRCTC BUSES</div>
+            <div class="subtitle text-2xl">Comfort | Safety | Punctuality</div>
+        </div>
+    </section>
+</body>
+</html>

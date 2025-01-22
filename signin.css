@@ -1,0 +1,226 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #21477f;
+    color: white;
+  }
+  
+  header img {
+    width: 6%;
+    height: auto;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu a,
+  .menu .btn a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 8px 12px;
+  }
+  
+  .menu .btn {
+    background-color: #1e4b8f;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .menu .btn a:hover {
+    color: #a1c4fd;
+  }
+  
+  /* Main Section */
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .signin-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .input-group i {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    outline: none;
+    border-color: #21477f;
+  }
+  
+  #captcha-code {
+    background: #f0f0f0;
+    padding: 8px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    color: #21477f;
+  }
+  
+  #refresh-captcha {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 5px;
+  }
+  
+  .signin-btn {
+    background-color: #21477f;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .signin-btn:hover {
+    background-color: #183961;
+  }
+  
+  .links {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .links a {
+    color: #21477f;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .links a:hover {
+    color: #a1c4fd;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+    }
+  
+    header img {
+      width: 8%;
+    }
+  }
+  
+  /* Mobile view for devices with a min-width of 300px */
+@media (min-width: 250px) and (max-width: 600px) {
+    /* Adjust header */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        text-align: center;
+    }
+
+    header img {
+        width: 10%; /* Adjust image size */
+        margin-bottom: 10px;
+    }
+
+    .div1 {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap; /* Wrap items to avoid overflow */
+    }
+
+    .div2 button,
+    .div2 .items {
+        margin: 5px 10px;
+        font-size: 14px;
+    }
+
+    /* Adjust the main section */
+    .main-section {
+        padding: 15px;
+        height: auto; /* Allow the section to grow as needed */
+    }
+
+    .signin-container {
+        width: 95%; /* Reduce container width for smaller screens */
+        padding: 15px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .signin-header {
+        font-size: 18px; /* Adjust font size for mobile */
+    }
+
+    .input-group {
+        flex-direction: column; /* Stack inputs vertically */
+        align-items: stretch; /* Ensure inputs stretch across the container */
+    }
+
+    input {
+        margin: 8px 0; /* Add vertical spacing between inputs */
+    }
+
+    .captcha-group {
+        flex-direction: column; /* Stack captcha elements vertically */
+        align-items: stretch;
+    }
+
+    .captcha-image {
+        justify-content: space-between;
+        margin: 10px 0;
+    }
+
+    .signin-btn {
+        padding: 10px;
+        font-size: 14px; /* Maintain readability */
+    }
+
+    .signin-links {
+        font-size: 12px;
+    }
+
+    .signin-links a {
+        margin: 5px;
+        display: block; /* Stack links vertically */
+    }
+}

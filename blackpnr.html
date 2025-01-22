@@ -1,0 +1,269 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   IRCTC Clone - PNR Status
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #3498db;
+            width: 40px;
+            height: 40px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .train-loader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 200px;
+            height: 50px;
+        }
+
+        .train-loader .train {
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            border-radius: 50%;
+            position: absolute;
+            animation: moveTrain 2s linear infinite;
+        }
+
+        @keyframes moveTrain {
+            0% { left: 0; }
+            50% { left: 150px; }
+            100% { left: 0; }
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100">
+  <!-- Loader -->
+  <div class="loader-container" id="loader">
+   <div class="train-loader">
+    <div class="train">
+    </div>
+    <span class="ml-4">
+     Loading...
+    </span>
+   </div>
+  </div>
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-4">
+   <div class="container mx-auto flex justify-between items-center">
+    <div class="flex items-center">
+     <img alt="IRCTC logo, a stylized train icon" class="h-10 w-10 mr-2" height="50" src="https://storage.googleapis.com/a1aa/image/uofUTxrIYfnyNUpuwGDWPME1mLI2XN5eRW8f2fYkPyEJ6xAgC.jpg" width="50"/>
+     <h1 class="text-2xl font-bold">
+      IRCTC
+     </h1>
+    </div>
+    <nav>
+     <ul class="flex space-x-4">
+      <li>
+       <a class="hover:underline" href="home.html" id="homeLink">
+        Home
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="trains.html" id="trainsLink">
+        Trains
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="pnr-status.html" id="pnrStatusLink">
+        PNR Status
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="contact-us.html" id="contactUsLink">
+        Contact Us
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <!-- PNR Status Form -->
+  <section class="container mx-auto p-4 mt-4 bg-white shadow-md rounded-md">
+   <h2 class="text-xl font-bold mb-4">
+    Check PNR Status
+   </h2>
+   <form class="grid grid-cols-1 md:grid-cols-3 gap-4" id="pnrForm">
+    <div class="md:col-span-2">
+     <label class="block text-sm font-medium text-gray-700" for="pnrNumber">
+      PNR Number
+     </label>
+     <input class="mt-1 block w-full p-2 border border-gray-300 rounded-md" id="pnrNumber" name="pnrNumber" placeholder="Enter your PNR number" type="text"/>
+    </div>
+    <div class="md:col-span-1">
+     <button class="w-full bg-blue-600 text-white p-2 rounded-md mt-6" type="submit">
+      Check Status
+     </button>
+    </div>
+   </form>
+  </section>
+  <!-- Sample PNR Numbers -->
+  <section class="container mx-auto p-4 mt-4 bg-white shadow-md rounded-md">
+   <h2 class="text-xl font-bold mb-4">
+    Sample PNR Numbers
+   </h2>
+   <ul class="list-disc pl-5">
+    <li>
+     <strong>PNR:</strong> 1234567890 - <strong>Train:</strong> Express 1 - <strong>From:</strong> Station A - <strong>To:</strong> Station B - <strong>Departure:</strong> 10:00 AM - <strong>Arrival:</strong> 2:00 PM
+    </li>
+    <li>
+     <strong>PNR:</strong> 0987654321 - <strong>Train:</strong> Express 2 - <strong>From:</strong> Station C - <strong>To:</strong> Station D - <strong>Departure:</strong> 11:00 AM - <strong>Arrival:</strong> 3:00 PM
+    </li>
+    <li>
+     <strong>PNR:</strong> 1122334455 - <strong>Train:</strong> Express 3 - <strong>From:</strong> Station E - <strong>To:</strong> Station F - <strong>Departure:</strong> 12:00 PM - <strong>Arrival:</strong> 4:00 PM
+    </li>
+    <li>
+     <strong>PNR:</strong> 5566778899 - <strong>Train:</strong> Express 4 - <strong>From:</strong> Station G - <strong>To:</strong> Station H - <strong>Departure:</strong> 1:00 PM - <strong>Arrival:</strong> 5:00 PM
+    </li>
+   </ul>
+  </section>
+  <!-- PNR Status Result -->
+  <section class="container mx-auto p-4 mt-4 bg-white shadow-md rounded-md" id="pnrResult" style="display: none;">
+   <h2 class="text-xl font-bold mb-4">
+    PNR Status Result
+   </h2>
+   <div class="space-y-4">
+    <div class="p-4 border border-gray-300 rounded-md">
+     <h3 class="text-lg font-bold">
+      Train Name: <span id="trainName"></span>
+     </h3>
+     <p class="text-sm text-gray-600">
+      From: <span id="fromStation"></span>
+     </p>
+     <p class="text-sm text-gray-600">
+      To: <span id="toStation"></span>
+     </p>
+     <p class="text-sm text-gray-600">
+      Departure: <span id="departureTime"></span>
+     </p>
+     <p class="text-sm text-gray-600">
+      Arrival: <span id="arrivalTime"></span>
+     </p>
+     <p class="text-sm text-gray-600">
+      Status: <span id="status"></span>
+     </p>
+    </div>
+   </div>
+  </section>
+  <script>
+   const pnrData = {
+            "1234567890": {
+                trainName: "Express 1",
+                fromStation: "Station A",
+                toStation: "Station B",
+                departureTime: "10:00 AM",
+                arrivalTime: "2:00 PM",
+                status: "Confirmed"
+            },
+            "0987654321": {
+                trainName: "Express 2",
+                fromStation: "Station C",
+                toStation: "Station D",
+                departureTime: "11:00 AM",
+                arrivalTime: "3:00 PM",
+                status: "Waiting"
+            },
+            "1122334455": {
+                trainName: "Express 3",
+                fromStation: "Station E",
+                toStation: "Station F",
+                departureTime: "12:00 PM",
+                arrivalTime: "4:00 PM",
+                status: "Confirmed"
+            },
+            "5566778899": {
+                trainName: "Express 4",
+                fromStation: "Station G",
+                toStation: "Station H",
+                departureTime: "1:00 PM",
+                arrivalTime: "5:00 PM",
+                status: "Cancelled"
+            }
+        };
+
+        document.getElementById('pnrForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const pnrNumber = document.getElementById('pnrNumber').value;
+            const result = pnrData[pnrNumber];
+
+            if (result) {
+                document.getElementById('trainName').innerText = result.trainName;
+                document.getElementById('fromStation').innerText = result.fromStation;
+                document.getElementById('toStation').innerText = result.toStation;
+                document.getElementById('departureTime').innerText = result.departureTime;
+                document.getElementById('arrivalTime').innerText = result.arrivalTime;
+                document.getElementById('status').innerText = result.status;
+                document.getElementById('pnrResult').style.display = 'block';
+            } else {
+                alert('PNR number not found.');
+            }
+        });
+
+        function showLoaderAndRedirect(url) {
+            document.getElementById('loader').style.display = 'flex';
+            setTimeout(function() {
+                window.location.href = url;
+            }, 2000);
+        }
+
+        document.getElementById('homeLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            showLoaderAndRedirect("home.html");
+        });
+
+        document.getElementById('trainsLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            showLoaderAndRedirect('blackTrains.html');
+        });
+
+        document.getElementById('pnrStatusLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            showLoaderAndRedirect('blackpnr.html');
+        });
+
+        document.getElementById('contactUsLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            showLoaderAndRedirect('contact-us.html');
+        });
+  </script>
+ </body>
+</html>

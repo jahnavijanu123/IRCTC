@@ -1,0 +1,532 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   IRCT Next Generation eTicketing System
+  </title>
+  <!-- <link href="style.css" rel="stylesheet"/> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   *{ 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        }
+
+        /* header */
+
+        header{
+            height: 13vh;
+            display:flex;
+            justify-content:space-evenly;
+            align-items:center; 
+            background-color:#fff;
+            position: sticky;
+            top: 0px;
+            z-index: 99999;
+        }
+
+        .div1{
+            display: flex; 
+            flex-direction: column;
+            align-items: space-between;
+            column-gap: 5%;
+            width: 80%;
+        }
+
+        .div2{
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            margin-bottom: .4%;
+        }
+
+        .div3{
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            margin-top: .4%;
+            gap: 1%;
+        }
+
+        button{
+            width: fit-content; 
+            border: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        .items{
+            margin: 0% 1%;
+            font-size: 75%;
+        }
+
+        #date,#time{
+            font-weight: bolder;
+            font-size: 80%;
+        }
+
+        .list1{
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            width: fit-content;
+            padding-right: 2%;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        .list-element{
+            font-size: 75%;
+            font-weight: 900;
+        }
+
+        /* main section */
+
+        .main-section{
+            background-image: url('https://plus.unsplash.com/premium_photo-1661937674312-89f00c7e44e7?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwcmFpbHdheXxlbnwwfHwwfHx8MA%3D%3D');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 2%;
+            padding-bottom: .5%;
+            height: fit-content;
+            background-attachment: fixed ;
+        }
+
+        .tdetails{
+            display: flex;
+            flex-direction: column;
+            width: 43%;
+        }
+
+        .head-tdetails{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        .pnr{
+            display: flex;
+            width: 49.5%;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(33,61,119);
+            color: #fff;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .charts{
+            width: 49.5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(33,61,119);
+            color: #fff;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .charts > img, .pnr > img{
+            margin-bottom: 5px;
+        }
+
+        .charts > div, .pnr > div{
+            font-size: 85%;
+            font-weight: bolder;
+            justify-self: flex-start;
+            padding: 0 15px;
+        }
+
+        .ir-title{
+            color: #fff;
+            font-weight: 900;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 2%;
+        }
+        .title{
+            font-size: 300%;
+        }
+        .subtitle{
+            font-size: 150%;
+        }
+
+        .travel-details{
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top:5%;
+            padding-bottom: 3%;
+            margin-top: -3.5%;
+            flex-direction: column;
+        }
+
+        .tdetail-head{
+            font-weight: 900;
+            font-size: 200%;
+            color: rgb(33,61,119);
+            margin-bottom: 8%;
+        }
+
+        .forms{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0% 2.5%;
+        }
+
+        .src-dest{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            padding: 0% 3%;
+            width: 57%;
+        }
+
+        .rotate90{
+            transform: rotate(90deg);
+        }
+
+        .src,.dest,.qota{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: rgb(33,61,119);
+            border-radius: 3px;
+            border: 1px solid #000;
+            width: 100%;
+        }
+
+        .srctext,.desttext,.qotatext{
+            font-size: 80%;
+            padding: 4% 3%;
+        }
+
+        input{
+            border: none;
+            outline: none;
+        }
+
+        select{
+            border: none;
+            outline: none;
+            margin-right: 2%;
+        }
+
+        .qota{
+            margin-top: 8%;
+        }
+
+        .tdate-class{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            padding: 0 3%;
+            width: 43%;
+        }
+
+        .tdate,.tclass{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: rgb(33,61,119);
+            border-radius: 3px;
+            border: 1px solid #000; 
+            width: 100%;  
+        }
+
+        .datatxt,.classtxt{
+            font-size: 90%;
+            padding: 4% 3%;
+        }
+
+        .classtxt{
+            padding: 4.5% 3%;
+        }
+
+        .tclass{
+            margin-top: 12%;
+        }
+
+        .check-box1{
+            display: flex;
+            justify-content: flex-start;
+            align-self: flex-start;
+            width: 90%;
+            margin-top: 5%;
+            margin-left: 5%;
+            gap: 2%;
+        }
+        .check-box2{
+            display: flex;
+            justify-content: flex-start;
+            align-self: flex-start;
+            width: 90%;
+            margin-top: 2%;
+            margin-left: 5%;
+            gap: 2%;
+        }
+
+        #tab,#rpc,#dc,#fwd{
+            width: 12%;
+            height: 120%;
+        }
+
+        .check-box1 > div{
+            display: flex;
+            align-items: center;
+        }
+
+        .check-box2 > div{
+            display: flex;
+            align-items: center;
+        }
+
+        .search{
+            padding: 2% 6%;
+            margin-top: 3%;
+            align-self: flex-start;
+            margin-left: 5%;
+            border-radius: 5px;
+            color:#fff;
+            font-weight: bolder;
+            background-color: rgb(230, 90, 9);
+        }
+
+        .c-services{
+            background-color: #fff;
+            margin-top: 2%;
+            padding: 1% 3% 1% 1%;
+            font-size: 88%;
+            font-weight: bolder;
+            color: blue;
+            line-height: 1.5;
+        }
+  </style>
+ </head>
+ <body>
+  <header>
+   <img alt="IRCTC logo with a train and Indian Railways text" height="100" src="https://storage.googleapis.com/a1aa/image/ABP9OoOMtBrBMlmN6TVVrgoqmff11QsZEfKXQWWmYFE2GQAoA.jpg" style="width: 6%; height: 78%;" width="100"/>
+   <div class="div1">
+    <div class="div2">
+     <button style="background-color: rgb(33,61,119); padding: .5% 1%;">
+      <a href="login.html" style="color:#fff; font-weight: bold">
+       LOGIN
+      </a>
+     </button>
+     <a class="items" href="singin.html">
+      REGISTER
+     </a>
+     <a class="items" href="contactinfo.html">
+      CONTACT US
+     </a>
+    </div>
+    <div class="div3">
+     <i class="fa fa-home" style="color:rgb(133, 139, 139);">
+     </i>
+     <li>
+      <a class="list-element" href="blackTrains.html">
+       TRAINS
+      </a>
+     </li>
+     <li>
+      <a class="list-element" href="blackbus.html">
+       BUSES
+      </a>
+     </li>
+     <li>
+      <a class="list-element" href="#">
+       FLIGHTS
+      </a>
+     </li>
+     <li>
+      <a class="list-element" href="#">
+       HOTELS
+      </a>
+     </li>
+     
+     <li>
+      <a class="list-element" href="#">
+       MEALS
+      </a>
+     </li>
+    </div>
+   </div>
+   <img alt="IRCTC logo with a train and Indian Railways text" height="100" src="https://storage.googleapis.com/a1aa/image/ABP9OoOMtBrBMlmN6TVVrgoqmff11QsZEfKXQWWmYFE2GQAoA.jpg" style="width: 4%; height: 78%; margin-right:2%;" width="100"/>
+  </header>
+  <section class="main-section">
+   <div class="tdetails">
+    <div class="head-tdetails">
+     <div class="pnr">
+      <img alt="PNR status icon" height="50" src="https://storage.googleapis.com/a1aa/image/LG91HSobfm2rIiFVjrASVcwUsbnh9RkDXwugr6fYUfYzGQAoA.jpg" width="50"/>
+      <div>
+       PNR STATUS
+      </div>
+     </div>
+     <div class="charts">
+      <img alt="Chart status icon" height="50" src="https://storage.googleapis.com/a1aa/image/hOpZ3PriSL57O14n6tYdHKCMkp5aQb2DbDtGah83evvuBEAKA.jpg" width="50"/>
+      <div>
+       CHARTS / VACANCY
+      </div>
+     </div>
+    </div>
+    <div class="travel-details">
+     <div class="tdetail-head">
+      BOOK TICKET
+     </div>
+     <form class="forms">
+      <div class="src-dest">
+       <div class="src">
+        <i class="fa fa-location-arrow" style="margin: 3px 0px 3px 10px;width:10%;">
+        </i>
+        <input class="srctext" placeholder="From" style="width:90%;" type="text"/>
+       </div>
+       <i class="fa fa-exchange rotate90">
+       </i>
+       <div class="dest">
+        <i class="fa fa-map-marker" style="margin: 3px 0px 3px 10px;width:10%;">
+        </i>
+        <input class="desttext" placeholder="To" style="width:90%;" type="text"/>
+       </div>
+       <div class="qota">
+        <i class="fa fa-th-large" style="margin: 3px 0px 3px 10px;width:10%;">
+        </i>
+        <select class="qotatext" style="width:90%;">
+         <option value="general">
+          GENERAL
+         </option>
+         <option value="ladies">
+          LADIES
+         </option>
+         <option value="lower-berth">
+          LOWER BERTH/SR.CITIZEN
+         </option>
+         <option value="divyaang">
+          DIVYAANG
+         </option>
+         <option value="tatkal">
+          TATKAL
+         </option>
+         <option value="premium-tatkal">
+          PREMIUM TATKAL
+         </option>
+        </select>
+       </div>
+      </div>
+      <div class="tdate-class">
+       <div class="tdate">
+        <i class="fa fa-calendar" style="margin: 3px 0px 0px 10px;width:15%;">
+        </i>
+        <input class="datatxt" placeholder="dd/mm/yyyy" style="width:85%" type="date"/>
+       </div>
+       <div class="tclass">
+        <i class="fa fa-briefcase" style="margin: 3px 0px 0px 10px;width:15%;">
+        </i>
+        <select class="classtxt" style="width:85%;">
+         <option value="all-classes">
+          All Classes
+         </option>
+         <option value="anubhuti-class">
+          Anubhuti Class (EA)
+         </option>
+         <option value="ac-first-class">
+          AC First Class (1A)
+         </option>
+         <option value="exec-chair-car">
+          Exec. Chair Car (EC)
+         </option>
+         <option value="ac-2-tier">
+          AC 2 Tier (2A)
+         </option>
+         <option value="first-class">
+          First Class (FC)
+         </option>
+         <option value="ac-3-tier">
+          AC 3 Tier (3A)
+         </option>
+         <option value="ac-3-economy">
+          AC 3 Economy (3E)
+         </option>
+         <option value="ac-chair-car">
+          AC Chair car (CC)
+         </option>
+         <option value="sleeper">
+          Sleeper (SL)
+         </option>
+         <option value="second-sitting">
+          Second Sitting (2S)
+         </option>
+        </select>
+       </div>
+      </div>
+     </form>
+     <div class="check-box1">
+      <div style="width: 40%;">
+       <input id="dc" type="checkbox">
+        <label for="dc" style="display:block; color:rgb(33,61,119); font-size:90%; font-weight: bolder;">
+         Divyaang Concession
+        </label>
+       </input>
+      </div>
+      <div style="width: 40%;">
+       <input id="fwd" type="checkbox"/>
+       <label for="fwd" style="display:block; color:rgb(33,61,119); font-size:90%; font-weight: bolder;">
+        Flexible with Date
+       </label>
+      </div>
+     </div>
+     <div class="check-box2">
+      <div style="width: 42%;">
+       <input id="tab" type="checkbox"/>
+       <label for="tab" style="display:block; color:rgb(33,61,119); font-size:90%; font-weight: bolder;">
+        Train with Available Berth
+       </label>
+      </div>
+      <div style="width: 50%;">
+       <input id="rpc" type="checkbox"/>
+       <label for="rpc" style="display:block; color:rgb(33,61,119); font-size:90%; font-weight: bolder;">
+        Railway Pass Concession
+       </label>
+      </div>
+     </div>
+     <button class="search">
+      Search
+     </button>
+    </div>
+    <div class="c-services">
+     Catering Services- Cooked food is now available on selected trains.
+     <span style="cursor:pointer;color:rgb(7, 136, 175);">
+      Click here to know more.
+     </span>
+     IRCTC Tejas Express Train no. 82501/82502 (LJN-NDLS-LJN) will run on all days except Tuesday with effect from 08.03.2022. IRCTC Tejas Express Train no. 82501/82502 (LJN-NDLS-LJN) will remain cancelled on Friday 18.03.2022.
+    </div>
+   </div>
+   <div class="ir-title">
+    <div class="title">
+     INDIAN RAILWAYS
+    </div>
+    <div class="subtitle">
+     Safety | Security | Punctuality
+    </div>
+    <br/>
+   </div>
+  </section>
+ </body>
+</html>
